@@ -29,7 +29,6 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             modeloLista.addElement(temp2);
         }
         jl_listaCriminales.setModel(modeloLista);
-        System.out.println(ac.getListaCriminales());
     }
 
     /**
@@ -631,6 +630,11 @@ public class InterfazPrincipal extends javax.swing.JFrame {
         jPanel1.add(jb_modificarCriminal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 100, 40));
 
         jb_crearExpediente.setText("Crear Expediente");
+        jb_crearExpediente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearExpedienteMouseClicked(evt);
+            }
+        });
         jPanel1.add(jb_crearExpediente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 140, 40));
 
         jLabel2.setText("Delito:");
@@ -774,7 +778,6 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             String culpable = cb_culpable.getSelectedItem().toString();
             String arma = jt_nombreArma.getText();
             int numeroVictimas = Integer.parseInt(jt_numeroVictimas.getText());
-            System.out.println(numeroVictimas);
             ac.cargarArchivo();
             ac.setDelito(new Asesinato(arma, numeroVictimas, descripcion, magnitud, culpable), jl_listaCriminales.getSelectedIndex());
             ac.escribirArchivo();
@@ -865,6 +868,10 @@ public class InterfazPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(jd_violacion, "Ocurrió un error fatal");
         }
     }//GEN-LAST:event_jb_okayViolacionMouseClicked
+
+    private void jb_crearExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearExpedienteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_crearExpedienteMouseClicked
 
     /**
      * @param args the command line arguments

@@ -19,6 +19,7 @@ public class Criminal {
     private int numeroCelda;
     private ArrayList<Delito> listaDelitos = new ArrayList();
     private int añosCumplir;
+    private String expediente = "";
 
     public Criminal() {
     }
@@ -84,7 +85,20 @@ public class Criminal {
         return nombre;
     }
     
-    
+    public String expediente(){
+        expediente += "Nombre: " + nombre + "\n";
+        expediente += "Edad: " + edad + "\n";
+        expediente += "Numero de ID: " + numeroIdentidad + "\n";
+        expediente += "Numero Celda: " + numeroCelda + "\n";
+        expediente += "Delitos:\n";
+        expediente += "\n";
+        int i = 0;
+        for (Delito temp : listaDelitos) {
+            expediente += "     "
+        }
+        
+        return expediente;
+    }
     
     
 }
