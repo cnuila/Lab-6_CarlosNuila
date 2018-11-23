@@ -130,50 +130,46 @@ public class AdministrarCriminales {
                     ArrayList<Delito> temp = new ArrayList();
                     String nombre = sc.next();
                     int edad = sc.nextInt();
-                    int numeroIdentidad = sc.nextInt();
+                    String numeroIdentidad = sc.next();
                     int numeroCelda = sc.nextInt();
                     Scanner sc2 = new Scanner(sc.next());
                     sc2.useDelimiter(",");
                     while (sc2.hasNext()) {
                         if (sc2.next().equals("Asesinato")) {
-                            sc2.next();
                             String descrip = sc2.next();
                             String gravedad = sc2.next();
                             String culpable = sc2.next();
                             temp.add(new Asesinato(sc2.next(), sc2.nextInt(), descrip, gravedad, culpable));
                         }
                         if (sc2.next().equals("Violacion")) {
-                            sc2.next();
                             String descrip = sc2.next();
                             String gravedad = sc2.next();
                             String culpable = sc2.next();
                             temp.add(new Violacion(sc2.nextInt(), descrip, gravedad, culpable));
                         }
                         if (sc2.next().equals("Robo")) {
-                            sc2.next();
                             String descrip = sc2.next();
                             String gravedad = sc2.next();
                             String culpable = sc2.next();
                             temp.add(new Robo(sc2.next(), sc2.nextDouble(), descrip, gravedad, culpable));
                         }
                         if (sc2.next().equals("Trafico de drogas")) {
-                            sc2.next();
                             String descrip = sc2.next();
                             String gravedad = sc2.next();
                             String culpable = sc2.next();
                             temp.add(new TraficoDrogas(sc2.next(), sc2.nextDouble(), descrip, gravedad, culpable));
                         }
                         if (sc2.next().equals("Secuestro")) {
-                            sc2.next();
                             String descrip = sc2.next();
                             String gravedad = sc2.next();
                             String culpable = sc2.next();
                             temp.add(new Secuestro(sc2.nextInt(), sc2.nextInt(), descrip, gravedad, culpable));
-                        } 
+                        }
                     }
                     int añosCumplir = sc.nextInt();
                     listaCriminales.add(new Criminal(nombre, edad, numeroIdentidad, numeroCelda, añosCumplir));
                     listaCriminales.get(listaCriminales.size() - 1).setListaDelitos(temp);
+                    sc2.close();
                 }
             } catch (Exception e) {
             }

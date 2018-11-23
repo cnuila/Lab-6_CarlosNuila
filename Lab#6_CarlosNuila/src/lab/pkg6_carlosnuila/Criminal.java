@@ -15,7 +15,7 @@ public class Criminal {
     
     private String nombre;
     private int edad;
-    private int numeroIdentidad;
+    private String numeroIdentidad;
     private int numeroCelda;
     private ArrayList<Delito> listaDelitos = new ArrayList();
     private int añosCumplir;
@@ -23,7 +23,7 @@ public class Criminal {
     public Criminal() {
     }
 
-    public Criminal(String nombre, int edad, int numeroIdentidad, int numeroCelda, int añosCumplir) {
+    public Criminal(String nombre, int edad, String numeroIdentidad, int numeroCelda, int añosCumplir) {
         this.nombre = nombre;
         this.edad = edad;
         this.numeroIdentidad = numeroIdentidad;
@@ -47,11 +47,11 @@ public class Criminal {
         this.edad = edad;
     }
 
-    public int getNumeroIdentidad() {
+    public String getNumeroIdentidad() {
         return numeroIdentidad;
     }
 
-    public void setNumeroIdentidad(int numeroIdentidad) {
+    public void setNumeroIdentidad(String numeroIdentidad) {
         this.numeroIdentidad = numeroIdentidad;
     }
 
