@@ -92,10 +92,12 @@ public class Criminal {
         expediente += "Numero Celda: " + numeroCelda + "\n";
         expediente += "Delitos:\n";
         expediente += "\n";
-        int i = 0;
+        int i = 1;
         for (Delito temp : listaDelitos) {
-            expediente += "     "
+            expediente += "     " + i + ")" + temp + "\n";
+            i++;
         }
+        expediente += "Años por Cumplir: " + añosCumplir;
         
         return expediente;
     }

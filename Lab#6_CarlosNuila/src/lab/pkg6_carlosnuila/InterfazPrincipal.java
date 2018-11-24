@@ -5,6 +5,10 @@
  */
 package lab.pkg6_carlosnuila;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -871,6 +875,23 @@ public class InterfazPrincipal extends javax.swing.JFrame {
 
     private void jb_crearExpedienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearExpedienteMouseClicked
         // TODO add your handling code here:
+        File archivo = null;
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            archivo = new File("./Expediente.txt");
+            fw = new FileWriter(archivo, true);
+            bw = new BufferedWriter(fw);
+            bw.write(ac.getListaCriminales().get(jl_listaCriminales.getSelectedIndex()).expediente());
+            bw.flush();
+        } catch (Exception e) {
+        }
+        try {
+            bw.close();
+            fw.close();
+        } catch (IOException e) {
+        }
+
     }//GEN-LAST:event_jb_crearExpedienteMouseClicked
 
     /**
